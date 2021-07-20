@@ -1,0 +1,53 @@
+<div class="modal_inicio_container d-flex justify-content-center align-items-center "
+  [hidden]="!bShowModalNuevosCambios">
+  <div class="modal_inicio sombra rounded animate__animated animate__slideInUp position-relative">
+    <i class="icon_cerrar_modal_nuevo fas fa-times-circle fa-2x" (click)="onNoClick()"></i>
+    <div class="swiper-container  bg-wave h-100">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide w-100" data-hash="slide1">
+          <div class="h-100 d-flex flex-column justify-content-around">
+            <div class="flex-center flex-column flex-grow-1 pt-2">
+              <div style="height: 40px;"></div>
+              <div class="contenedor-circulo">
+                <img class="img-fluid" src="./assets/img/brand/ch_logo_pequeno.png">
+              </div>
+              <h4 class="text-center mt-2 mb-5">
+                Bienvenido a la versión <strong>{{oNuevoModal.version}}</strong> de <strong>InfoFactura</strong>
+              </h4>
+              <h5 class="text-center mt-2 mb-5 gris lead">
+                Te guiaremos con los principales cambios de esta versión
+              </h5>
+              <button (click)="next()" type="submit" class="btn-success verde_primary btn  px-4 py-3">
+                ¿Qué hay de nuevo?
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide  w-90" data-hash="slide2">
+          <div class="h-100 d-flex align-items-center">
+            <ul class="mx-5 list-group-flush w-100 p-0 " id="modal_nuevo">
+              <li class="list-group-item d-flex justify-content-between align-items-center "
+                *ngFor="let nuevo_cambio of oNuevoModal?.nuevos_cambios">
+                <div [innerHtml]="nuevo_cambio.nuevo_cambio">
+                </div>
+                <div>
+                  <i *ngIf="oNuevoModal.icono" class="fas fa-info-circle fa-2x gris mx-2" [ngClass]="oNuevoModal.icono">
+                  </i>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-center">
+                <button (click)="onNoClick()" type="submit" class="btn-success verde_primary btn  px-4 py-2 mt-2"
+                  aria-label="Close">
+                  Terminar
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
