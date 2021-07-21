@@ -10,7 +10,9 @@ body {
   font-size: 12px;
   font-weight: 400;
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
   position: relative;
 }
@@ -506,6 +508,7 @@ main h2 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 2;
 }
 .dropdown_filter span {
   padding-right: 20px;
@@ -530,26 +533,36 @@ main h2 {
   border-right: 7px solid transparent;
   border-top: 7px solid #333333;
 }
+div.swiper-container {
+  padding-bottom: 2px;
+}
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px 20px;
 }
 
-.grid div {
-  width: 350px;
-  height: 350px;
-}
 .list {
-  display: block;
+  display: block !important;
   width: 100%;
 }
 .list div {
   height: 170px;
   margin-top: 15px;
 }
+.swiper_phone {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.swiper_phone .swiper-slide {
+  margin-right: 10px;
+  width: 238px !important;
+  height: 238px !important;
+}
+
 @media all and (min-width: 500px) {
   .banner-top .banner__left {
     flex-basis: 30%;
@@ -562,17 +575,21 @@ main h2 {
   body {
     background: orange;
   }
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 14px;
+  }
+  .grid div {
+    height: 48vw !important;
+  }
 }
 
 @media all and (min-width: 768px) {
   html,
   body {
     font-size: 14px;
-    background: red;
-  }
-  main[role="main"].grid {
-  }
-  main[role="main"].list {
+    background: blue;
   }
 
   .hero {
@@ -673,7 +690,14 @@ main h2 {
     font-size: 18px;
     background: yellow;
   }
-
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 14px;
+  }
+  div.grid div {
+    height: 357px !important;
+  }
   .max-centered {
     position: relative;
     display: block;

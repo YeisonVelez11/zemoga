@@ -97,13 +97,13 @@
 
   <main role="main">
     <!-- Start: Implementation -->
+    <!-- filter dropdown-->
     <div class="container_rulings_filter">
       <div class="flex-grow-1">
         <h2>Previous Rulings</h2>
       </div>
-      <div class="position-relative">
-        <div class="dropdown_filter" (click)="actionDropdown()" (focusout)="funcions()" on-focus="funcions()"
-          on-focusout="funcions()">
+      <div class="position-relative" [ngClass]='{"d-none":deviceScreenPhone}'>
+        <div class="dropdown_filter" (click)="actionDropdown()">
           <span>
             {{valueDropdownSelected}}
           </span>
@@ -121,22 +121,33 @@
             </span>
           </div>
         </div>
-
       </div>
     </div>
-    <div [ngClass]="{'list':valueDropdownSelected=='List','grid':valueDropdownSelected=='Grid'}">
-      <div class="borde">
-        1
+    <div class="swiper-container">
+      <!-- instance of swiper, only for phones-->
+      <div
+        [ngClass]="{'list':valueDropdownSelected=='List' && !deviceScreenPhone,'grid':valueDropdownSelected=='Grid' && !deviceScreenPhone, 'swiper_phone':deviceScreenPhone}"
+        class="swiper-wrapper">
+        <div class="swiper-slide borde">
+          1
+        </div>
+        <div class="swiper-slide borde">
+          1
+        </div>
+        <div class="swiper-slide borde">
+          1
+        </div>
+        <div class="swiper-slide borde">
+          1
+        </div>
+        <div class="swiper-slide borde">
+          1
+        </div>
+        <div class="swiper-slide borde">
+          1
+        </div>
       </div>
-      <div class="borde">
-        1
-      </div>
-      <div class="borde">
-        1
-      </div>
-      <div class="borde">
-        1
-      </div>
+
     </div>
 
     <!-- End: Implementation -->
