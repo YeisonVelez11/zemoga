@@ -2,20 +2,27 @@
   height: 100vh;
 }
 .w-100 {
-  width: 100% !important;
+  width: 100%;
 }
 .position-fixed {
   position: fixed !important;
 }
 .align-items-center {
-  align-items: center !important;
+  align-items: center;
 }
 .d-none {
-  display: none;
+  display: none !important;
 }
 .justify-content-center {
-  justify-content: center !important;
+  justify-content: center;
 }
 .d-flex {
   display: flex !important;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.div[hidden] {
+  display: none !important;
 }

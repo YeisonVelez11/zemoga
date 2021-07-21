@@ -18,7 +18,6 @@ import * as _moment from 'moment';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
-
   imports: [
     HttpClientModule,
     BrowserModule,

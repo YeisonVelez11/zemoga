@@ -94,9 +94,46 @@
       </svg>
     </button>
   </aside>
+
   <main role="main">
     <!-- Start: Implementation -->
-    👉 Your code goes here 👈
+    <div class="container_rulings_filter borde">
+      <div class="borde flex-grow-1">
+        <h2>Previous Rulings</h2>
+      </div>
+      <div class="position-relative">
+        <div class="dropdown_filter" (click)="actionDropdown()" (focusout)="funcions()" on-focus="funcions()"
+          on-focusout="funcions()">
+          <span>
+            {{valueDropdownSelected}}
+          </span>
+          <div class="arrow-down"></div>
+        </div>
+        <div class="container_dropdown_option" [ngClass]='{"d-none":dropDownGrid}'>
+          <div class="dropdown_option" (click)="setOptionDropdownGrid('List')">
+            <span>
+              List
+            </span>
+          </div>
+          <div class="dropdown_option" (click)="setOptionDropdownGrid('Grid')">
+            <span>
+              Grid
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="borde">
+      1
+    </div>
+    <div class="borde">
+      1
+    </div>
+    <div class="borde">
+      1
+    </div>
     <!-- End: Implementation -->
   </main>
   <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
