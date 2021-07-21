@@ -487,6 +487,7 @@ main h2 {
   display: flex;
   align-items: center;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .container_rulings_filter h2 {
@@ -530,6 +531,25 @@ main h2 {
   border-top: 7px solid #333333;
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 20px;
+}
+
+.grid div {
+  width: 350px;
+  height: 350px;
+}
+.list {
+  display: block;
+  width: 100%;
+}
+.list div {
+  height: 170px;
+  margin-top: 15px;
+}
 @media all and (min-width: 500px) {
   .banner-top .banner__left {
     flex-basis: 30%;

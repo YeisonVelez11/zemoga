@@ -97,8 +97,8 @@
 
   <main role="main">
     <!-- Start: Implementation -->
-    <div class="container_rulings_filter borde">
-      <div class="borde flex-grow-1">
+    <div class="container_rulings_filter">
+      <div class="flex-grow-1">
         <h2>Previous Rulings</h2>
       </div>
       <div class="position-relative">
@@ -124,16 +124,21 @@
 
       </div>
     </div>
+    <div [ngClass]="{'list':valueDropdownSelected=='List','grid':valueDropdownSelected=='Grid'}">
+      <div class="borde">
+        1
+      </div>
+      <div class="borde">
+        1
+      </div>
+      <div class="borde">
+        1
+      </div>
+      <div class="borde">
+        1
+      </div>
+    </div>
 
-    <div class="borde">
-      1
-    </div>
-    <div class="borde">
-      1
-    </div>
-    <div class="borde">
-      1
-    </div>
     <!-- End: Implementation -->
   </main>
   <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
