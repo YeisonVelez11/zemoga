@@ -480,6 +480,8 @@ main h2 {
   padding: 22px;
   background: white;
 }
+
+
 .loading_text {
   position: absolute;
   top: 60%;
@@ -487,17 +489,8 @@ main h2 {
   transform: translate(-50%, -50%);
   color: white;
 }
-.container_rulings_filter {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 7px;
-}
 
-.container_rulings_filter h2 {
-  padding: 0px;
-  margin: 0px;
-}
+
 .dropdown_filter,
 .dropdown_option {
   font-size: 14px;
@@ -512,6 +505,7 @@ main h2 {
   cursor: pointer;
   z-index: 2;
 }
+/*dropdown styles*/
 .dropdown_filter span {
   padding-right: 20px;
 }
@@ -535,6 +529,19 @@ main h2 {
   border-right: 7px solid transparent;
   border-top: 7px solid #333333;
 }
+/* ruling styles */
+.container_rulings_filter {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 7px;
+}
+
+.container_rulings_filter h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
 div.swiper-container {
   padding-bottom: 2px;
 }
@@ -554,8 +561,6 @@ div.list  {
   height: 170px;
 }
 
-
-
 .swiper_phone {
   display: flex;
   flex-wrap: nowrap;
@@ -565,10 +570,10 @@ div.list  {
   color: white;
 }
 
-.list .swiper_slide{
+.list .swiper-slide{
   background: linear-gradient(
 90deg
-, rgb(154, 154, 154) 0%, 31.0484%, rgb(105, 105, 105) 62.0968%, 81.0484%, rgb(127, 127, 127) 100%)
+, #b3abab 0%, 31.0484%, rgb(105, 105, 105) 62.0968%, 81.0484%, rgb(127, 127, 127) 100%)
 }
 .swiper_phone .swiper-slide {
   margin-right: 10px;
@@ -583,22 +588,8 @@ div.list  {
   position: absolute;
   background-size: cover;
   background-position: center;
-  border:1px solid red;
-
 }
-.list .container_image_ruling:after {
-  width:100%;
-  content:'';
-  display:block;
-  position:absolute;
-  top:0px;
-  left:0px;
-  background: linear-gradient(to left, rgba(154, 154, 154,1) 0%,rgba(127, 127, 127,0) 69%);
-  height:100%;
-}
-//background: linear-gradient(
 
-/*.image_ruling {width:100%;object-fit: cover; height: 100%}*/
 .container_ruling_texts{
   height: 100%;
   display: flex;
@@ -607,12 +598,11 @@ div.list  {
   align-items: center;
   position: relative;
   width: 100%;
-  border:1px solid blue;
 }
-
 .container_ruling_texts .rulign_title,.container_ruling_texts .rulign_description{
   padding-left: 2.5rem;
   padding-right: 21px;
+  z-index: 2;
 }
 
 .rulign_title{
@@ -721,21 +711,22 @@ div.list  {
   background-color: rgba(0,0,0,1);
 }
 
-
-
-
 .btn_rate{
-
   width: 2.4rem;
   height: 2.4rem;
   display: inline-block;
   margin-left: 10px;
-
 }
 
 .btn_rate img{
     max-width: 1.25rem;
-  
+}
+
+.thanks_vote{
+  position: absolute;
+  bottom: 32px;
+  font-size: 0.7rem;
+  right: 25px;
 }
 @media all and (min-width: 500px) {
   .banner-top .banner__left {
@@ -746,9 +737,7 @@ div.list  {
     flex-basis: 70%;
   }
 
-  body {
-    background: orange;
-  }
+ 
   .grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
@@ -766,8 +755,65 @@ div.list  {
   html,
   body {
     font-size: 14px;
-    background: blue;
   }
+
+  .list .thumbs_icon_selected{
+    position: absolute;
+    top:0px;
+  }
+  .list #container_relative_ruling{
+    position: initial;
+    margin-left: 131px;
+
+  }
+
+  .list .container_bar_percentage{
+
+    bottom: 0px;
+    height: 40px;
+  }
+  
+  .list .container_image_ruling {
+    background-size: 195px 100%;
+    background-position: left;
+  }
+  .list .container_ruling_texts {
+    justify-content: flex-start; 
+    align-items: flex-start;
+    
+  }
+  .list .rulign_title{
+    font-size: 2.5rem;
+  }
+  .list .rulign_description {
+    font-size: 1rem;
+    max-width: 550px;
+  }
+  .list .ruling_ago {
+    font-size: 0.8rem;
+    right: 0px;
+    top: 9px;
+    position: absolute;
+  }
+  .list .btn_vote {
+    font-size: 0.9rem;
+  }
+  .list .thumbs_icon_selected, .list .btn_rate {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+  .list .btn_rate img {
+    max-width: 0.9rem;
+  } 
+  .list .ruling_percentaje_number_negative, .list .ruling_percentaje_number_positive{
+    font-size: 1.25rem;
+  }
+  .list .button_actions {
+
+    bottom: 75px;
+}
+
+
 
   .hero {
     max-height: 38rem;
@@ -865,7 +911,6 @@ div.list  {
   html,
   body {
     font-size: 18px;
-    background: yellow;
   }
 
   .rulign_title{
@@ -873,6 +918,7 @@ div.list  {
   }
   .rulign_description {
     font-size: 1rem;
+    margin-top: 7px;
   }
   .ruling_ago {
     font-size: 0.8rem;
@@ -901,7 +947,41 @@ div.list  {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 14px;
   }
- 
+  .list #container_relative_ruling {
+    position: initial;
+    margin-left: 164px;
+   
+}
+    .list .rulign_description {
+      font-size: 1rem;
+      max-width: 692px;
+    }
+  .list .container_image_ruling {
+    background-size: 250px 100%;
+    background-position: left;
+  }
+  .list .btn_vote {
+    font-size: 0.9rem;
+  }
+  .list .thumbs_icon_selected, .list .btn_rate {
+    width: 2rem;
+    height: 2rem;
+  }
+  .list .btn_rate img {
+    max-width: 1rem;
+  } 
+  .list .ruling_percentaje_number_negative, .list .ruling_percentaje_number_positive{
+    font-size: 1.25rem;
+  }
+  .list .button_actions {
+
+    bottom: 75px;
+}
+  .list .container_bar_percentage{
+    height: 50px;
+  }
+
+
   .max-centered {
     position: relative;
     display: block;

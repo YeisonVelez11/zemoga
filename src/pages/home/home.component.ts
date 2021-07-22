@@ -10,7 +10,7 @@ import Swiper from 'swiper';
 export class HomeComponent implements OnInit {
   swiper: any; //is necesary to use the destroy function
   dropDownGrid: boolean = true; //controls if dropown should be open/closed
-  valueDropdownSelected: string = 'Grid';
+  valueDropdownSelected: string = 'List';
   deviceScreenPhone: boolean; //check if resolution is phone
   @HostListener('window:resize', ['$event'])
   onResize(event) {
