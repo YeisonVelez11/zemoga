@@ -128,8 +128,73 @@
       <div
         [ngClass]="{'list':valueDropdownSelected=='List' && !deviceScreenPhone,'grid':valueDropdownSelected=='Grid' && !deviceScreenPhone, 'swiper_phone':deviceScreenPhone}"
         class="swiper-wrapper">
-        <div class="swiper-slide borde">
-          1
+        <div class="swiper-slide">
+          <div class="container_image_ruling"
+            style="background-image: url('https://gestion.pe/resizer/q0raUgQOgwcyOcHNu52kDQk77cM=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/SMTXVEJFZRHNZDPDBI4SWLFM24.jpg');">
+
+            <div class="container_ruling_texts">
+              <div class="position-relative">
+                <button class="icon-button thumbs_icon_selected" aria-label="thumbs up">
+                  <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                </button>
+                <p class="rulign_title">
+                  Kanye West
+                </p>
+                <p class="rulign_description">
+                  The daughter of educational activist Ziauddin, Yousafzai was born to a Pashtun family in Mingora,
+                  Khyber
+                  Pakhtunkhwa, Pakistan. Her family came to run a chain of schools in the region.
+                </p>
+                <p class="ruling_ago">
+                  Hace mil años
+                </p>
+
+
+
+              </div>
+
+              <div class="button_actions">
+                <button class="icon-button btn_rate" aria-label="thumbs up">
+                  <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                </button>
+                <button class="icon-button btn_rate" aria-label="thumbs down">
+                  <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                </button>
+                <button class="btn_vote" (click)="myfunction()">
+                  Vote Now
+                </button>
+              </div>
+
+
+
+
+
+              <div class="container_bar_percentage">
+                <div class="positive_ruling">
+                  <button class="icon-button" aria-label="thumbs up">
+                    <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                  </button>
+                  <span class="ruling_percentaje_number_positive">
+                    74.5%
+                  </span>
+                </div>
+                <div class="negative_ruling">
+                  <span class="ruling_percentaje_number_negative">
+                    74.5%
+                  </span>
+                  <button class="icon-button" aria-label="thumbs down">
+                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                  </button>
+
+                </div>
+              </div>
+
+            </div>
+
+            <!-- <img
+              src="https://gestion.pe/resizer/q0raUgQOgwcyOcHNu52kDQk77cM=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/SMTXVEJFZRHNZDPDBI4SWLFM24.jpg"
+              alt="" class="image_ruling"> -->
+          </div>
         </div>
         <div class="swiper-slide borde">
           1

@@ -25,13 +25,13 @@ export class HomeComponent implements OnInit {
   actionDropdown() {
     this.dropDownGrid = !this.dropDownGrid;
   }
-  setOptionDropdownGrid(type) {
+  setOptionDropdownGrid(type:string) {
     this.valueDropdownSelected = type;
     this.dropDownGrid = true;
   }
 
   getDeviceScreen() {
-    if (window.innerWidth < 499) {
+    if (window.innerWidth < 769) {
       if (!this.deviceScreenPhone) {
         //prevent multiple calls to start swipper
         this.startSwipper();
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-
+  
   startSwipper() {
     this.swiper = new Swiper('.swiper-container', {
       freeMode: false,
@@ -55,5 +55,9 @@ export class HomeComponent implements OnInit {
       centerInsufficientSlides: true,
       loop: false,
     });
+  }
+
+  myfunction(){
+    alert("tye")
   }
 }
