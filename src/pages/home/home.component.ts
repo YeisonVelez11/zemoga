@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   
   constructor(private ServicesProvider: ServicesProvider) {}
   ngOnInit() {
-
     this.getDeviceScreen();
     this.getRulings();
   }
@@ -76,17 +75,19 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  formatDateRuling(date){
+  formatDateRuling(date:string){
     console.log(date);
     return  moment(date).fromNow();
   }
 
-  updateRuling(_id:string,thumb:object){
+  updateRuling(_id:string,type:string,index:string){
     this.ServicesProvider.preloaderOn();
     this.ServicesProvider
-      .put(WEBSERVICE.RULING_UPDATE,_id,thumb)
+      .put(WEBSERVICE.RULING_UPDATE,_id, {thumb:type})
       .then((data) => {
-        this.rulingData=data.data;
+        console.log(data.data);
+        this.rulingData[index]=data.data;
+        
       })
       .catch((err:any) => {
         this.ServicesProvider.fn_GenerarToast('error', 'There is a problem! try again');

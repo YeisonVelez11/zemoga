@@ -128,13 +128,13 @@
       <div
         [ngClass]="{'list':valueDropdownSelected=='List' && !deviceScreenPhone,'grid':valueDropdownSelected=='Grid' && !deviceScreenPhone, 'swiper_phone':deviceScreenPhone}"
         class="swiper-wrapper">
-        <div class="swiper-slide" *ngFor="let item_ruling of rulingData">
+        <div class="swiper-slide" *ngFor="let item_ruling of rulingData; let i=index;">
           <div class="container_image_ruling"
             [style.background-image]="'linear-gradient(to left, rgb(146 145 145) 20%, transparent 60%),url('+item_ruling.picture+')'">
 
             <div class="container_ruling_texts">
               <div id="container_relative_ruling" class="position-relative">
-                <button class="icon-button thumbs_icon_selected"
+                <button class="icon-button thumbs_icon_selected" *ngIf="item_ruling.thumb"
                   [attr.aria-label]="item_ruling.thumb=='negative'?'thumbs down':'thumbs up'">
                   <img [src]="'assets/img/'+ (item_ruling.thumb=='negative'?'thumbs-down.svg':'thumbs-up.svg')"
                     [alt]="item_ruling.thumb=='negative'?'thumbs down':'thumbs up'" />
@@ -147,25 +147,31 @@
                   {{item_ruling.description}}
 
                 </p>
-                <p class="ruling_ago">
+                <p class="ruling_ago" *ngIf="!item_ruling.thumb">
                   {{formatDateRuling(item_ruling.lastUpdated)}} in {{item_ruling.category}}
                 </p>
               </div>
               <div class="button_actions">
-                <p class="thanks_vote">
+                <p class="thanks_vote" *ngIf="item_ruling.thumb">
                   Thank you for your vote!
                 </p>
-                <button class="icon-button btn_rate" aria-label="thumbs up"
-                  [ngClass]="{'thumb_selected':item_ruling.thumb=='positive'}">
+                <button class="icon-button btn_rate" aria-label="thumbs up" (click)="item_ruling.temp_thumb='positive'"
+                  *ngIf='!item_ruling.thumb' [ngClass]="{'thumb_selected':item_ruling.temp_thumb=='positive'}">
                   <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                 </button>
-                <button class="icon-button btn_rate" aria-label="thumbs down"
-                  [ngClass]="{'thumb_selected':item_ruling.thumb=='negative'}">
+                <button class="icon-button btn_rate" aria-label="thumbs down" *ngIf='!item_ruling.thumb'
+                  (click)="item_ruling.temp_thumb='negative'"
+                  [ngClass]="{'thumb_selected':item_ruling.temp_thumb=='negative'}">
                   <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                 </button>
-                <button class="btn_vote" (click)="myfunction()">
+                <button class="btn_vote" *ngIf="item_ruling.thumb" (click)="updateRuling(item_ruling._id,'reset',i)">
+                  Vote Again
+                </button>
+                <button class="btn_vote" *ngIf="!item_ruling.thumb" [ngClass]="{'btn_disabled':!item_ruling.temp_thumb}"
+                  (click)="updateRuling(item_ruling._id,item_ruling.temp_thumb,i)">
                   Vote Now
                 </button>
+                <!-- {{(click)="updateRuling(item_ruling._id,'negative',i)"}} -->
               </div>
               <div class="container_bar_percentage">
                 <div class="positive_ruling" [ngStyle]="{'width':item_ruling.votes.positive_percentage+'%'}">

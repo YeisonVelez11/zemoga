@@ -97,6 +97,7 @@ hr[role="separator"] {
   right: 1rem;
   width: 25px;
   height: 20px;
+  cursor: pointer;
 }
 
 .nav__links {
@@ -642,7 +643,7 @@ div.list  {
   font-size: 1.1rem;
   font-weight: 600;
   float: right;
-  margin: 0px 2.5rem 0px 0px;
+  margin: 0px 26px 0px 0px;
 }
 
 .container_bar_percentage{
@@ -659,6 +660,8 @@ div.list  {
   display: flex;
   align-items: center;
 }
+
+
 
 button.thumb_selected{
   border: 2px solid white;
@@ -680,13 +683,18 @@ button.thumb_selected{
 }
 .ruling_percentaje_number_positive, .ruling_percentaje_number_negative{
   font-size: 1.5rem;
-
+  z-index: 2;
 }
+.positive_ruling button, .negative_ruling button{
+  position: absolute;
+  z-index: 2;
+}
+
 .ruling_percentaje_number_positive{
-  padding-left: 5px;
+  padding-left: 23px;
 }
 .ruling_percentaje_number_negative{
-  padding-right: 5px;
+  padding-right: 23px;
 }
 
 .button_actions{
@@ -696,6 +704,7 @@ button.thumb_selected{
   right: 0px;
   justify-content: flex-end;
   bottom: 42px;
+  width: 100%;
 }
 .btn_vote{
   width: 104px;
@@ -727,10 +736,14 @@ button.thumb_selected{
 
 .thanks_vote{
   position: absolute;
-  bottom: 32px;
-  font-size: 0.7rem;
-  right: 25px;
+  bottom: 34px;
+  font-size: 1rem;
+  right: 16px;
+  width: 100%;
+  text-align: right;
 }
+
+
 @media all and (min-width: 500px) {
   .banner-top .banner__left {
     flex-basis: 30%;
@@ -752,6 +765,8 @@ button.thumb_selected{
     height: 46vw;
     max-height: 378px;
   }
+
+
 }
 
 @media all and (min-width: 768px) {
@@ -790,7 +805,7 @@ button.thumb_selected{
   }
   .list .rulign_description {
     font-size: 1rem;
-    max-width: 550px;
+    max-width: 57vw;
   }
   .list .ruling_ago {
     font-size: 0.8rem;
@@ -812,11 +827,17 @@ button.thumb_selected{
     font-size: 1.25rem;
   }
   .list .button_actions {
-
+    width:100%;
     bottom: 75px;
 }
-
-
+.thanks_vote {
+  position: absolute;
+  bottom: 46px;
+  font-size: 0.9rem;
+  right: 25px;
+  text-align: right;
+  width: 100%;
+}
 
   .hero {
     max-height: 38rem;

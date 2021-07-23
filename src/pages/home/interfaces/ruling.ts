@@ -12,6 +12,6 @@ export interface ruling {
         "negative": Number,
         "positive_percentage":Number,
         "negative_percentage":Number
-
-    }
+    },
+    "temp_thumb": string
 }

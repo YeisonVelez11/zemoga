@@ -42,8 +42,11 @@ let rulingSchema = new Schema({
         type: String,
         default: null,
         enum: roleThumbs
+    },
+    temp_thumb: {
+        type: String,
+        default: null
     }
-
 })
 
 

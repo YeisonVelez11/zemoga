@@ -71,16 +71,16 @@ app.put('/update_ruling/:_id', async function (req, res) {
     positiveVote = ruling.votes.positive + 1;
     ruling.set("votes.positive", positiveVote);
     ruling.set("thumb", "positive");
-    ruling.set("votes.positive_percentage", parseInt((positiveVote * 100) / totalPercentage));
-    ruling.set("votes.negative_percentage", parseInt((negativeVote * 100) / totalPercentage));
+    ruling.set("votes.positive_percentage", ((positiveVote * 100) / totalPercentage).toFixed(1));
+    ruling.set("votes.negative_percentage", ((negativeVote * 100) / totalPercentage).toFixed(1));
 
   }
   else if (thumb == "negative") {
-    let negativeVote = ruling.votes.negative + 1;
+    negativeVote = ruling.votes.negative + 1;
     ruling.set("votes.negative", negativeVote);
     ruling.set("thumb", "negative");
-    ruling.set("votes.positive_percentage", parseInt((positiveVote * 100) / totalPercentage));
-    ruling.set("votes.negative_percentage", parseInt((negativeVote * 100) / totalPercentage));
+    ruling.set("votes.positive_percentage", ((positiveVote * 100) / totalPercentage).toFixed(1));
+    ruling.set("votes.negative_percentage", ((negativeVote * 100) / totalPercentage).toFixed(1));
 
   }
   else {
