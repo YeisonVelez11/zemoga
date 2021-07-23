@@ -23,7 +23,7 @@ run
 
 ### MongoDB 🔧
 
-Para no realizar la configuración se la base de datos, esta desplegada en la nube
+In order not to configure the database, it is deployed in the cloud
 
 ## Repository  📦
 
