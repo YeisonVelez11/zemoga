@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //declaraciones componentes
 import { HomeComponent } from '../pages/index.pages';
@@ -22,7 +21,6 @@ import * as _moment from 'moment';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     AngularBootstrapToastsModule,
     BrowserAnimationsModule,
     FormsModule,

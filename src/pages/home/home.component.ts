@@ -52,10 +52,12 @@ export class HomeComponent implements OnInit {
   
   startSwipper() {
     this.swiper = new Swiper('.swiper-container', {
-      freeMode: false,
       initialSlide: 0,
-      centerInsufficientSlides: true,
+      freeMode:true,
+      observer: true, 
+      observeParents: true,
       loop: false,
+      slidesPerView: 'auto'
     });
   }
 
@@ -76,7 +78,6 @@ export class HomeComponent implements OnInit {
   }
 
   formatDateRuling(date:string){
-    console.log(date);
     return  moment(date).fromNow();
   }
 

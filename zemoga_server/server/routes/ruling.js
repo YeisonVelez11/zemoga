@@ -14,30 +14,6 @@ app.get('/list', [], (req, res) => {
   });
 });
 
-app.post('/registro', [], function (req, res) {
-
-  let ruling = new Ruling(
-    {
-      "name": "Kanye West",
-      "description": "Born in Atlanta and raised in Chicago, West was first known as a producer for Roc-A-Fella Records in the early 2000s, producing singles for several mainstream artists.",
-      "category": "entertainment",
-      "picture": "kanye.png",
-      "lastUpdated": new Date(),
-      "votes": {
-        "positive": 23,
-        "negative": 36
-      },
-      "thumb": "positive"
-    });
-
-  ruling.save((err, RulingDB) => {
-    return res.status(200).json({
-      ok: false,
-      err,
-      data: RulingDB
-    });
-  });
-});
 
 
 app.put('/update_ruling/:_id', async function (req, res) {

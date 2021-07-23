@@ -1,6 +1,9 @@
 {
     "name": "Zemoga",
     "version": "1.0.0",
+    "engines": {
+        "node": "12.18.3"
+    },
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -11,7 +14,6 @@
     "license": "ISC",
     "dependencies": {
         "atob": "^2.1.2",
-        "axios": "^0.21.1",
         "based-blob": "^1.0.1",
         "body-parser": "^1.18.2",
         "cors": "^2.8.5",
