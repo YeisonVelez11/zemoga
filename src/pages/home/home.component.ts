@@ -9,6 +9,7 @@ import {ruling} from "./interfaces/ruling"
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
+  rulings:ruling[]=[];
   swiper: any; //is necesary to use the destroy function
   dropDownGrid: boolean = true; //controls if dropown should be open/closed
   valueDropdownSelected: string = 'List';
@@ -20,9 +21,9 @@ export class HomeComponent implements OnInit {
   
   constructor(private ServicesProvider: ServicesProvider) {}
   ngOnInit() {
-    // this.ServicesProvider.preloaderOn();
-    console.log(window.innerWidth);
+
     this.getDeviceScreen();
+    this.getRulings();
   }
   actionDropdown() {
     this.dropDownGrid = !this.dropDownGrid;
@@ -66,17 +67,19 @@ export class HomeComponent implements OnInit {
   getRulings(){
     this.ServicesProvider.preloaderOn();
     this.ServicesProvider
-      .get('posts1')
+      .get(WEBSERVICE.RULINGS_GET)
       .then((data) => {
-        console.log(data);
-        if (data) {
-        }
+        this.ServicesProvider.fn_GenerarToast('success', 'Thanks for your vote!');
+
+        this.rulings=data.data;
       })
       .catch((err) => {
-        //console.log(err, 'problema');
+        this.ServicesProvider.fn_GenerarToast('error', 'Thanks for your vote!');
+
       })
       .finally(() => {
         this.ServicesProvider.preloaderOff();
+
       });
 
 

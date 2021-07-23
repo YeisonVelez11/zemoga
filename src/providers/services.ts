@@ -87,25 +87,22 @@ export class ServicesProvider {
 
   //muestra un toast
   //tipo: exito | advertencia | error
-  //mensaje:  puede ser cualquier cosa
-  //duracion: duracion en milisegundos
-  fn_GenerarToast(tipo: any, mensaje: any, duracion?: number) {
+  //message:  puede ser cualquier cosa
+  //duration: duration en milisegundos
+  fn_GenerarToast(tipo: any, message: any, duration?: number) {
     let json_toast: any = {};
-    if (tipo.toLowerCase() == 'exito' || tipo.toLowerCase() == 'éxito') {
-      json_toast.title = 'Éxito';
-      json_toast.iconClass = 'fas fa-check text-green';
+    if (tipo.toLowerCase() == 'success' ) {
+      json_toast.title = 'Success';
       json_toast.titleClass = 'modal_success_bg';
     } else if (tipo.toLowerCase() == 'error') {
       json_toast.title = 'Error';
-      json_toast.iconClass = 'fas fa-exclamation';
       json_toast.titleClass = 'modal_danger_bg';
     } else {
-      json_toast.title = 'Advertencia';
-      json_toast.iconClass = 'fa fa-exclamation-triangle';
+      json_toast.title = 'Oops!';
       json_toast.titleClass = 'modal_warning_bg';
     }
-    json_toast.text = mensaje;
-    json_toast.duration = duracion || 3000;
+    json_toast.text = message;
+    json_toast.duration = duration || 3000;
 
     this.toastsService.showSimpleToast(json_toast);
   }

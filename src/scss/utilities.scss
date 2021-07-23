@@ -30,3 +30,30 @@
 .position-relative{
   position: relative;
 }
+._toast {
+  border: none !important;
+}
+._toast ._toast-body {
+  font-size: 15px !important;
+  font-weight: 100;
+}
+
+._toast ._toast-header.modal_success_bg {
+  background: #3fc59d ;
+  color: white ;
+}
+._toast ._toast-header.modal_warning_bg {
+  background: #ffb853 ;
+  color: white ;
+}
+._toast ._toast-header.modal_danger_bg {
+  background: #c55952 ;
+  color: white ;
+}
+
+._toast ._toast-header  button._close{
+  position: absolute;
+  right: 9px;
+  top: 3px;
+  color: white ;
+}
