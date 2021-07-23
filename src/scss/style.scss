@@ -621,7 +621,8 @@ div.list .swiper-slide {
 }
 
 .rulign_title {
-	font-size: 3rem;
+	font-size: 2.4rem;
+
 	margin: 0px;
 }
 
@@ -824,11 +825,13 @@ button.thumb_selected {
 		align-items: flex-start;
 	}
 	.list .rulign_title {
-		font-size: 2.5rem;
+		font-size: 1.6rem;
+    padding-top: 12px;
 	}
 	.list .rulign_description {
+    
 		font-size: 1rem;
-		max-width: 56vw;
+    max-width: 55.7vw;
 	}
 	.list .ruling_ago {
 		font-size: 0.8rem;
@@ -945,7 +948,7 @@ button.thumb_selected {
 		font-size: 18px;
 	}
 	.rulign_title {
-		font-size: 2rem;
+		font-size: 1.9rem;
 	}
 	.rulign_description {
 		font-size: 1rem;
