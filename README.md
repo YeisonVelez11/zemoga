@@ -6,6 +6,8 @@ run
 
     then  ng-serve
 
+Principalmente se trabajó la parte lógica en `src/pages/home`
+
 ### installation and execution in Node.js 🔧
 
 run
@@ -19,6 +21,9 @@ run
     cd zemoga_server
     node server.js
 
+### MongoDB 🔧
+
+Para no realizar la configuración se la base de datos, esta desplegada en la nube
 
 ## Repository  📦
 
@@ -45,3 +50,7 @@ run
 - Angular 
 
 - Github
+
+- MongoDB
+
+- Mongoose
