@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
       .get(WEBSERVICE.RULINGS_GET)
       .then((data) => {
 
-        this.rulingData=data.data;
+        this.rulingData=data;
       })
       .catch((err:any) => {
         this.ServicesProvider.fn_GenerarToast('error', 'Not can receive the data');
@@ -85,9 +85,8 @@ export class HomeComponent implements OnInit {
     this.ServicesProvider
       .put(WEBSERVICE.RULING_UPDATE,_id, {thumb:type})
       .then((data) => {
-        console.log(data.data);
-        this.rulingData[index]=data.data;
-        
+        this.rulingData[index]=data;
+
       })
       .catch((err:any) => {
         this.ServicesProvider.fn_GenerarToast('error', 'There is a problem! try again');

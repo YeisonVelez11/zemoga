@@ -10,10 +10,7 @@ app.get('/list', [], (req, res) => {
         err
       });
     }
-    return res.status(200).json({
-      ok: true,
-      data
-    });
+    return res.status(200).json(data);
   });
 });
 
@@ -95,10 +92,9 @@ app.put('/update_ruling/:_id', async function (req, res) {
         err
       });
     }
-    return res.status(200).json({
-      ok: true,
-      data: RulingDB
-    });
+    return res.status(200).json(
+      RulingDB
+    );
   })
 
 });
