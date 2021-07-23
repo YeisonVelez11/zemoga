@@ -24,13 +24,31 @@ export class HomeComponent implements OnInit {
     this.getDeviceScreen();
     this.getRulings();
   }
+  /*
+  @name actionDropdown
+  @param 
+  @description open or close dropdown 
+  @return void
+  */
   actionDropdown() {
     this.dropDownGrid = !this.dropDownGrid;
   }
+  /*
+  @name setOptionDropdownGrid
+  @param type:string  'List' | 'Grid'
+  @description set an option of drodown
+  @return void
+  */
   setOptionDropdownGrid(type:string) {
     this.valueDropdownSelected = type;
     this.dropDownGrid = true;
   }
+  /*
+  @name getDeviceScreen
+  @param 
+  @description check the screen resolution, if resolution is minor to 769, swiper will start otherwise stops
+  @return void
+  */
 
   getDeviceScreen() {
     if (window.innerWidth < 769) {
@@ -49,7 +67,12 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-  
+  /*
+  @name startSwipper
+  @param 
+  @description Start functionality of swipe (sliding)
+  @return void
+  */
   startSwipper() {
     this.swiper = new Swiper('.swiper-container', {
       initialSlide: 0,
@@ -60,7 +83,12 @@ export class HomeComponent implements OnInit {
       slidesPerView: 'auto'
     });
   }
-
+  /*
+  @name getRulings
+  @param 
+  @description getting ruling data by get method
+  @return void
+  */
   getRulings(){
     this.ServicesProvider.preloaderOn();
     this.ServicesProvider
@@ -76,11 +104,23 @@ export class HomeComponent implements OnInit {
         this.ServicesProvider.preloaderOff();
       });
   }
-
+  /*
+  @name formatDateRuling
+  @param date:string  date of lastUpdated
+  @description format a date to moment library format
+  @return string
+  */
   formatDateRuling(date:string){
     return  moment(date).fromNow();
   }
-
+  /*
+  @name updateRuling
+  @param _id:string  identificar of ruling
+  @param type:string  type of status of vote:  'positive' | 'negative' | 'reset'
+  @param index:number  index of item ruling selected
+  @description update the ruling vote in bd
+  @return void
+  */
   updateRuling(_id:string,type:string,index:string){
     this.ServicesProvider.preloaderOn();
     this.ServicesProvider

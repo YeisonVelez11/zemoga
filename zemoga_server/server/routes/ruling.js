@@ -15,11 +15,8 @@ app.get('/list', [], (req, res) => {
 });
 
 
-
 app.put('/update_ruling/:_id', async function (req, res) {
 
-  console.log(req.params);
-  console.log(req.body);
   let { thumb } = req.body;
   let ruling;
   try {

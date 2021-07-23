@@ -49,7 +49,4 @@ let rulingSchema = new Schema({
     }
 })
 
-
-
-
 module.exports = mongoose.model('Ruling', rulingSchema);
