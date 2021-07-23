@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 let roleThumbs = {
-    values: ["positive","negative",null]
+    values: ["positive", "negative", null]
 }
 
 let Schema = mongoose.Schema;
@@ -26,18 +26,24 @@ let rulingSchema = new Schema({
     votes: {
         type: Object,
         positive: {
-            type:Number
+            type: Number
         },
         negative: {
-            type:Number
+            type: Number
         },
+        positive_percentage: {
+            type: Number
+        },
+        positive_percentage: {
+            type: Number
+        }
     },
-    thumb:{
+    thumb: {
         type: String,
         default: null,
         enum: roleThumbs
     }
-    
+
 })
 
 

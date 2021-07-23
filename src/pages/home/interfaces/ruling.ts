@@ -6,8 +6,12 @@ export interface ruling {
     "category": string,
     "picture": string,
     "lastUpdated": Date,
+    "formatDate":String,
     "votes": {
         "positive": Number,
-        "negative": Number
+        "negative": Number,
+        "positive_percentage":Number,
+        "negative_percentage":Number
+
     }
 }

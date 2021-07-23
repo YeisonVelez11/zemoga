@@ -654,11 +654,14 @@ div.list  {
 }
 
 .positive_ruling, .negative_ruling{
-  width: 50%;
   height: 100%;
   position: relative;
   display: flex;
   align-items: center;
+}
+
+button.thumb_selected{
+  border: 2px solid white;
 }
 .positive_ruling{
   background-color: rgba($color-green-positive, 0.8);

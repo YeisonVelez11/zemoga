@@ -9,7 +9,7 @@ import {ruling} from "./interfaces/ruling"
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
-  rulings:ruling[]=[];
+  rulingData:ruling[] = [];
   swiper: any; //is necesary to use the destroy function
   dropDownGrid: boolean = true; //controls if dropown should be open/closed
   valueDropdownSelected: string = 'List';
@@ -60,28 +60,40 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  myfunction(){
-    alert("tye")
-  }
-
   getRulings(){
     this.ServicesProvider.preloaderOn();
     this.ServicesProvider
       .get(WEBSERVICE.RULINGS_GET)
       .then((data) => {
-        this.ServicesProvider.fn_GenerarToast('success', 'Thanks for your vote!');
 
-        this.rulings=data.data;
+        this.rulingData=data.data;
       })
-      .catch((err) => {
-        this.ServicesProvider.fn_GenerarToast('error', 'Thanks for your vote!');
-
+      .catch((err:any) => {
+        this.ServicesProvider.fn_GenerarToast('error', 'Not can receive the data');
       })
       .finally(() => {
         this.ServicesProvider.preloaderOff();
-
       });
-
-
   }
+
+  formatDateRuling(date){
+    console.log(date);
+    return  moment(date).fromNow();
+  }
+
+  updateRuling(_id:string,thumb:object){
+    this.ServicesProvider.preloaderOn();
+    this.ServicesProvider
+      .put(WEBSERVICE.RULING_UPDATE,_id,thumb)
+      .then((data) => {
+        this.rulingData=data.data;
+      })
+      .catch((err:any) => {
+        this.ServicesProvider.fn_GenerarToast('error', 'There is a problem! try again');
+      })
+      .finally(() => {
+        this.ServicesProvider.preloaderOff();
+      });
+  }
+
 }

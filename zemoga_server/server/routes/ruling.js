@@ -64,13 +64,24 @@ app.put('/update_ruling/:_id', async function (req, res) {
       err: "There is not data with this id"
     });
   }
+  let positiveVote = ruling.votes.positive;
+  let negativeVote = ruling.votes.negative;
+  let totalPercentage = ruling.votes.positive + ruling.votes.negative;
   if (thumb == "positive") {
-    ruling.set("votes.positive", ruling.votes.positive + 1);
+    positiveVote = ruling.votes.positive + 1;
+    ruling.set("votes.positive", positiveVote);
     ruling.set("thumb", "positive");
+    ruling.set("votes.positive_percentage", parseInt((positiveVote * 100) / totalPercentage));
+    ruling.set("votes.negative_percentage", parseInt((negativeVote * 100) / totalPercentage));
+
   }
   else if (thumb == "negative") {
-    ruling.set("votes.negative", ruling.votes.negative + 1);
+    let negativeVote = ruling.votes.negative + 1;
+    ruling.set("votes.negative", negativeVote);
     ruling.set("thumb", "negative");
+    ruling.set("votes.positive_percentage", parseInt((positiveVote * 100) / totalPercentage));
+    ruling.set("votes.negative_percentage", parseInt((negativeVote * 100) / totalPercentage));
+
   }
   else {
     ruling.set("thumb", null);
