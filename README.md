@@ -1,27 +1,47 @@
-# MyDreamsApp
+### installation and execution in Angular 🔧
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+run
 
-## Development server
+    npm install 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    then  ng-serve
 
-## Code scaffolding
+### installation and execution in Node.js 🔧
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+run
 
-## Build
+    cd zemoga_server
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    npm install 
 
-## Running unit tests
+    then  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    cd zemoga_server
+    node server.js
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Repository  📦
 
-## Further help
+    https://github.com/YeisonVelez11/zemoga
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Url  🌎 
+
+    https://yeisonwantstojoinzemoga.herokuapp.com/
+
+## Documentation Rest API 📃✅
+
+    https://yeisonwantstojoinzemoga.herokuapp.com/docs/
+
+## Technologies 🔨
+
+- NodeJS Engine
+
+- NPM
+
+- Git
+
+- VSCode
+
+- Angular 
+
+- Github
