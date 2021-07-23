@@ -47,6 +47,16 @@ export class ServicesProvider {
       .toPromise();
   }
 
+  public put(inUrl: string, urlParam:string, params?: object) {
+    let httpOptions = {
+      headers: new HttpHeaders(),
+    };
+    return this.http
+      .put(inUrl+`/${urlParam}`, params, httpOptions)
+      .pipe(catchError(this.handleError.bind(this)))
+      .toPromise();
+  }
+
   public preloaderOff() {
     if (document.querySelector('#preloader')) {
       document.querySelector('#preloader')!.classList.remove('d-block');

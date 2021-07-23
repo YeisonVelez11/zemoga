@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 let roleThumbs = {
-    values: ["positive","negative"]
+    values: ["positive","negative",null]
 }
 
 let Schema = mongoose.Schema;

@@ -1,8 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { WEBSERVICE, URL } from '../../config/webservices';
 import { ServicesProvider } from '../../providers/services';
+import * as moment from 'moment';
 import Swiper from 'swiper';
-
+import {ruling} from "./interfaces/ruling"
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,9 +14,10 @@ export class HomeComponent implements OnInit {
   valueDropdownSelected: string = 'List';
   deviceScreenPhone: boolean; //check if resolution is phone
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  onResize() {
     this.getDeviceScreen();
   }
+  
   constructor(private ServicesProvider: ServicesProvider) {}
   ngOnInit() {
     // this.ServicesProvider.preloaderOn();
@@ -59,5 +61,24 @@ export class HomeComponent implements OnInit {
 
   myfunction(){
     alert("tye")
+  }
+
+  getRulings(){
+    this.ServicesProvider.preloaderOn();
+    this.ServicesProvider
+      .get('posts1')
+      .then((data) => {
+        console.log(data);
+        if (data) {
+        }
+      })
+      .catch((err) => {
+        //console.log(err, 'problema');
+      })
+      .finally(() => {
+        this.ServicesProvider.preloaderOff();
+      });
+
+
   }
 }
