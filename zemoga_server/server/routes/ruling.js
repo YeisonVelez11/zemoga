@@ -69,24 +69,23 @@ app.put('/update_ruling/:_id', async function (req, res) {
       err: "There is not data with this id"
     });
   }
-  let positiveVote = ruling.votes.positive;
-  let negativeVote = ruling.votes.negative;
-  let totalPercentage = ruling.votes.positive + ruling.votes.negative;
+
   if (thumb == "positive") {
-    positiveVote = ruling.votes.positive + 1;
+    let positiveVote = ruling.votes.positive + 1;
+    let totalPercentage = positiveVote + ruling.votes.negative;
     ruling.set("votes.positive", positiveVote);
     ruling.set("thumb", "positive");
-    ruling.set("votes.positive_percentage", ((positiveVote * 100) / totalPercentage).toFixed(1));
-    ruling.set("votes.negative_percentage", ((negativeVote * 100) / totalPercentage).toFixed(1));
+    ruling.set("votes.positive_percentage", ((positiveVote * 100) / totalPercentage).toFixed(0));
+    ruling.set("votes.negative_percentage", ((ruling.votes.negative * 100) / totalPercentage).toFixed(0));
 
   }
   else if (thumb == "negative") {
-    negativeVote = ruling.votes.negative + 1;
+    let negativeVote = ruling.votes.negative + 1;
+    let totalPercentage = ruling.votes.positive + negativeVote;
     ruling.set("votes.negative", negativeVote);
     ruling.set("thumb", "negative");
-    ruling.set("votes.positive_percentage", ((positiveVote * 100) / totalPercentage).toFixed(1));
-    ruling.set("votes.negative_percentage", ((negativeVote * 100) / totalPercentage).toFixed(1));
-
+    ruling.set("votes.positive_percentage", ((ruling.votes.positive * 100) / totalPercentage).toFixed(0));
+    ruling.set("votes.negative_percentage", ((negativeVote * 100) / totalPercentage).toFixed(0));
   }
   else {
     ruling.set("thumb", null);

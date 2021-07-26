@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  url: 'https://yeisonwantstojoinzemoga.herokuapp.com/',
+  url: 'http://localhost:3000/',
 };
